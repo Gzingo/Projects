@@ -85,7 +85,7 @@ public class TestDashboardPage {
 			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 			String actualText4 = DashboardPage.shiftPlanningText(driver);
 			String expectedText4 = driver.findElement(By.cssSelector("#sn_schedule")).getText();
-			// driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			String actualUrl4 = driver.getCurrentUrl();
 			String expectedUrl4 = DashboardPage.SHIFTS_URL;
 
