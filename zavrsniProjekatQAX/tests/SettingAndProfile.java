@@ -31,7 +31,7 @@ public class SettingAndProfile {
 
 	@Test(priority = 1)
 	public void languageAndNotifications() {
-
+	   try {
 		HomePage.goToURL(driver);
 		driver.manage().window().maximize();
 		HomePage.closePopUp(driver);
@@ -53,11 +53,17 @@ public class SettingAndProfile {
 		SettingsPage.unchekMobile(driver);
 		SettingsPage.saveSettings(driver);
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-	}
+		System.out.println("Test PASSED");
+		   
+	}catch (Exception e) {
+		   System.out.println("Test FAILED");
+		   e.printStackTrace();
+	   }
+}
 
 	@Test(priority = 2)
 	public void profileSettings() {
-
+	   try {
 		HomePage.goToURL(driver);
 		driver.manage().window().maximize();
 		HomePage.closePopUp(driver);
@@ -80,6 +86,10 @@ public class SettingAndProfile {
 		SettingsPage.myPhone(driver);
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		SettingsPage.saveProfile(driver);
+		System.out.println("Test PASSED");
 
-	}
+	} catch (Exception e) {
+		   System.out.println("Test FAILED");
+		   e.printStackTrace();
+	   }
 }
