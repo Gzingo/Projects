@@ -70,7 +70,7 @@ public class TestStaffPage {
 
 	@Test(priority = 2)
 	public void editEmployee() {
-
+	
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		driver.navigate().refresh();
 		DashboardPage.clickStaff(driver);
@@ -82,10 +82,13 @@ public class TestStaffPage {
 		String changeName = driver.findElement(By.id("first_name")).getAttribute("value");
 		if (changeName.equalsIgnoreCase("John")) {
 			System.out.println("Name of employee successfully changed.");
+			System.out.println("Test PASSED");
+		} else { 
+			System.out.println("Test FAILED");
 		}
-		StaffPage.saveEditBtn(driver);
-		driver.navigate().refresh();
-	}
+			StaffPage.saveEditBtn(driver);
+			driver.navigate().refresh();
+}
 
 	@Test(priority = 3)
 	public void testAddStaff1() {
