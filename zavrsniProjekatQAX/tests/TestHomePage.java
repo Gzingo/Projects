@@ -46,7 +46,9 @@ public class TestHomePage {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 			AboutUsPage.takeSnapShot(driver, "C:\\projectScreenshots\\HumanityAboutUs.png");
 			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+			System.out.println("Test PASSED");
 		} catch (Exception e) {
+			System.out.println("Test FAILED");
 			e.printStackTrace();
 		}
 
